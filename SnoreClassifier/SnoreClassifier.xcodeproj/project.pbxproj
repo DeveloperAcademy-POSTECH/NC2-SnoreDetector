@@ -1,0 +1,435 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3E08B74228BE4D9500F1AD99 /* SoundResultsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E08B74128BE4D9500F1AD99 /* SoundResultsObserver.swift */; };
+		3E08B74628BE601F00F1AD99 /* SnoreClassification.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3E08B74528BE601F00F1AD99 /* SnoreClassification.mlmodel */; };
+		3ED04B9A28BE3F07000B4B4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED04B9928BE3F07000B4B4C /* AppDelegate.swift */; };
+		3ED04B9C28BE3F07000B4B4C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED04B9B28BE3F07000B4B4C /* SceneDelegate.swift */; };
+		3ED04BA328BE3F08000B4B4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3ED04BA228BE3F08000B4B4C /* Assets.xcassets */; };
+		3ED04BA628BE3F08000B4B4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ED04BA428BE3F08000B4B4C /* LaunchScreen.storyboard */; };
+		3ED04BB328BE3F5B000B4B4C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED04BB228BE3F5B000B4B4C /* UIView+Extension.swift */; };
+		3ED04BB528BE3F72000B4B4C /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED04BB428BE3F72000B4B4C /* Color+Extension.swift */; };
+		3ED04BBA28BE3FFC000B4B4C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED04BB928BE3FFC000B4B4C /* MainViewController.swift */; };
+		3ED04BBC28BE4012000B4B4C /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED04BBB28BE4012000B4B4C /* Record.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3E08B74128BE4D9500F1AD99 /* SoundResultsObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundResultsObserver.swift; sourceTree = "<group>"; };
+		3E08B74528BE601F00F1AD99 /* SnoreClassification.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SnoreClassification.mlmodel; sourceTree = "<group>"; };
+		3ED04B9628BE3F07000B4B4C /* SnoreClassifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnoreClassifier.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3ED04B9928BE3F07000B4B4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3ED04B9B28BE3F07000B4B4C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		3ED04BA228BE3F08000B4B4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3ED04BA528BE3F08000B4B4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3ED04BA728BE3F08000B4B4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3ED04BB228BE3F5B000B4B4C /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		3ED04BB428BE3F72000B4B4C /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		3ED04BB928BE3FFC000B4B4C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		3ED04BBB28BE4012000B4B4C /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3ED04B9328BE3F07000B4B4C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3ED04B8D28BE3F07000B4B4C = {
+			isa = PBXGroup;
+			children = (
+				3ED04B9828BE3F07000B4B4C /* SnoreClassifier */,
+				3ED04B9728BE3F07000B4B4C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3ED04B9728BE3F07000B4B4C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3ED04B9628BE3F07000B4B4C /* SnoreClassifier.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3ED04B9828BE3F07000B4B4C /* SnoreClassifier */ = {
+			isa = PBXGroup;
+			children = (
+				3ED04BB728BE3FEF000B4B4C /* Models */,
+				3ED04BB628BE3FE7000B4B4C /* Screens */,
+				3ED04BAD28BE3F18000B4B4C /* Global */,
+				3ED04BA228BE3F08000B4B4C /* Assets.xcassets */,
+			);
+			path = SnoreClassifier;
+			sourceTree = "<group>";
+		};
+		3ED04BAD28BE3F18000B4B4C /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				3ED04BB128BE3F38000B4B4C /* Extensions */,
+				3ED04BB028BE3F34000B4B4C /* Supports */,
+				3ED04BAF28BE3F29000B4B4C /* UIComponents */,
+				3ED04BAE28BE3F1F000B4B4C /* Resources */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		3ED04BAE28BE3F1F000B4B4C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3ED04BA428BE3F08000B4B4C /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3ED04BAF28BE3F29000B4B4C /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		3ED04BB028BE3F34000B4B4C /* Supports */ = {
+			isa = PBXGroup;
+			children = (
+				3ED04B9928BE3F07000B4B4C /* AppDelegate.swift */,
+				3ED04B9B28BE3F07000B4B4C /* SceneDelegate.swift */,
+				3ED04BA728BE3F08000B4B4C /* Info.plist */,
+			);
+			path = Supports;
+			sourceTree = "<group>";
+		};
+		3ED04BB128BE3F38000B4B4C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3ED04BB228BE3F5B000B4B4C /* UIView+Extension.swift */,
+				3ED04BB428BE3F72000B4B4C /* Color+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3ED04BB628BE3FE7000B4B4C /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				3ED04BB828BE3FF6000B4B4C /* Views */,
+				3ED04BB928BE3FFC000B4B4C /* MainViewController.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		3ED04BB728BE3FEF000B4B4C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3E08B74528BE601F00F1AD99 /* SnoreClassification.mlmodel */,
+				3ED04BBB28BE4012000B4B4C /* Record.swift */,
+				3E08B74128BE4D9500F1AD99 /* SoundResultsObserver.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3ED04BB828BE3FF6000B4B4C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3ED04B9528BE3F07000B4B4C /* SnoreClassifier */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3ED04BAA28BE3F08000B4B4C /* Build configuration list for PBXNativeTarget "SnoreClassifier" */;
+			buildPhases = (
+				3ED04B9228BE3F07000B4B4C /* Sources */,
+				3ED04B9328BE3F07000B4B4C /* Frameworks */,
+				3ED04B9428BE3F07000B4B4C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SnoreClassifier;
+			productName = SnoreClassifier;
+			productReference = 3ED04B9628BE3F07000B4B4C /* SnoreClassifier.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3ED04B8E28BE3F07000B4B4C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					3ED04B9528BE3F07000B4B4C = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 3ED04B9128BE3F07000B4B4C /* Build configuration list for PBXProject "SnoreClassifier" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3ED04B8D28BE3F07000B4B4C;
+			productRefGroup = 3ED04B9728BE3F07000B4B4C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3ED04B9528BE3F07000B4B4C /* SnoreClassifier */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3ED04B9428BE3F07000B4B4C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3ED04BA628BE3F08000B4B4C /* LaunchScreen.storyboard in Resources */,
+				3ED04BA328BE3F08000B4B4C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3ED04B9228BE3F07000B4B4C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E08B74228BE4D9500F1AD99 /* SoundResultsObserver.swift in Sources */,
+				3ED04BB528BE3F72000B4B4C /* Color+Extension.swift in Sources */,
+				3ED04B9A28BE3F07000B4B4C /* AppDelegate.swift in Sources */,
+				3ED04BBA28BE3FFC000B4B4C /* MainViewController.swift in Sources */,
+				3ED04BBC28BE4012000B4B4C /* Record.swift in Sources */,
+				3ED04BB328BE3F5B000B4B4C /* UIView+Extension.swift in Sources */,
+				3E08B74628BE601F00F1AD99 /* SnoreClassification.mlmodel in Sources */,
+				3ED04B9C28BE3F07000B4B4C /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3ED04BA428BE3F08000B4B4C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3ED04BA528BE3F08000B4B4C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3ED04BA828BE3F08000B4B4C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3ED04BA928BE3F08000B4B4C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3ED04BAB28BE3F08000B4B4C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S9G6YGQ76H;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SnoreClassifier/Global/Supports/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "To detect snoring";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com-id.SnoreClassifier";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3ED04BAC28BE3F08000B4B4C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S9G6YGQ76H;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SnoreClassifier/Global/Supports/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "To detect snoring";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com-id.SnoreClassifier";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3ED04B9128BE3F07000B4B4C /* Build configuration list for PBXProject "SnoreClassifier" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3ED04BA828BE3F08000B4B4C /* Debug */,
+				3ED04BA928BE3F08000B4B4C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3ED04BAA28BE3F08000B4B4C /* Build configuration list for PBXNativeTarget "SnoreClassifier" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3ED04BAB28BE3F08000B4B4C /* Debug */,
+				3ED04BAC28BE3F08000B4B4C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3ED04B8E28BE3F07000B4B4C /* Project object */;
+}
