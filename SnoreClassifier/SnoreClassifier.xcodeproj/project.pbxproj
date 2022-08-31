@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3E08B74228BE4D9500F1AD99 /* SoundResultsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E08B74128BE4D9500F1AD99 /* SoundResultsObserver.swift */; };
 		3E08B74628BE601F00F1AD99 /* SnoreClassification.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3E08B74528BE601F00F1AD99 /* SnoreClassification.mlmodel */; };
+		3E08B74828BF3A5D00F1AD99 /* FeedbackPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E08B74728BF3A5D00F1AD99 /* FeedbackPopUpView.swift */; };
 		3ED04B9A28BE3F07000B4B4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED04B9928BE3F07000B4B4C /* AppDelegate.swift */; };
 		3ED04B9C28BE3F07000B4B4C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED04B9B28BE3F07000B4B4C /* SceneDelegate.swift */; };
 		3ED04BA328BE3F08000B4B4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3ED04BA228BE3F08000B4B4C /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		3E08B74128BE4D9500F1AD99 /* SoundResultsObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundResultsObserver.swift; sourceTree = "<group>"; };
 		3E08B74528BE601F00F1AD99 /* SnoreClassification.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SnoreClassification.mlmodel; sourceTree = "<group>"; };
+		3E08B74728BF3A5D00F1AD99 /* FeedbackPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackPopUpView.swift; sourceTree = "<group>"; };
 		3ED04B9628BE3F07000B4B4C /* SnoreClassifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnoreClassifier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3ED04B9928BE3F07000B4B4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3ED04B9B28BE3F07000B4B4C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 		3ED04BB828BE3FF6000B4B4C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3E08B74728BF3A5D00F1AD99 /* FeedbackPopUpView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				3E08B74228BE4D9500F1AD99 /* SoundResultsObserver.swift in Sources */,
 				3ED04BB528BE3F72000B4B4C /* Color+Extension.swift in Sources */,
 				3ED04B9A28BE3F07000B4B4C /* AppDelegate.swift in Sources */,
+				3E08B74828BF3A5D00F1AD99 /* FeedbackPopUpView.swift in Sources */,
 				3ED04BBA28BE3FFC000B4B4C /* MainViewController.swift in Sources */,
 				3ED04BBC28BE4012000B4B4C /* Record.swift in Sources */,
 				3ED04BB328BE3F5B000B4B4C /* UIView+Extension.swift in Sources */,

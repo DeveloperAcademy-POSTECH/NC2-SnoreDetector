@@ -20,6 +20,7 @@ final class MainViewController: UIViewController {
     private var inputFormat: AVAudioFormat!
     private var streamAnalyzer: SNAudioStreamAnalyzer!
     private var resultsObserver = SoundResultsObserver()
+    private var isObserving: Bool = false
     
     
     // MARK: - size
@@ -32,14 +33,21 @@ final class MainViewController: UIViewController {
     
     
     // MARK: - properties
-    private let areYouReadyLabel: UILabel = {
+    private let sleepStatusLabel: UILabel = {
         let label = UILabel()
         label.text = "잘 준비가 되셨나요🤔"
         label.font = UIFont.boldSystemFont(ofSize: CGFloat(24))
         label.textColor = .white
         return label
     }()
-    private lazy var areYouReadyButton: UIButton = {
+    private lazy var snoringLabel: UILabel = {
+        let label = UILabel()
+        label.text = ""
+        label.font = UIFont.systemFont(ofSize: CGFloat(20))
+        label.textColor = .white
+        return label
+    }()
+    private lazy var changeStatusButton: UIButton = {
         let button = UIButton()
         button.setTitle("나..코고나😬", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: CGFloat(20))
@@ -57,17 +65,66 @@ final class MainViewController: UIViewController {
         configureConstraints()
         configureUI()
         configureMLModel()
-        analyzeStreamInputs()
     }
     
     
     // MARK: - selector
     @objc func startObserving() {
-        changeLabel(from: areYouReadyLabel, to: "잘자요😴")
+        if isObserving {
+            stopStreamAnalysis()
+            changeLabel(from: sleepStatusLabel, to: "잘 준비가 되셨나요🤔")
+            changeLabel(from: snoringLabel, to: "")
+        } else {
+            startStreamAnalysis()
+            changeLabel(from: sleepStatusLabel, to: "잘자요😴")
+        }
+        isObserving.toggle()
     }
     
+ 
+    // MARK: - configures
+    private func configureAddSubViews() {
+        view.backgroundColor = .systemBackground
+        view.addSubViews(sleepStatusLabel,
+                         changeStatusButton,
+                         snoringLabel)
+    }
     
-    // MARK: - functions
+    private func configureConstraints() {
+        sleepStatusLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            sleepStatusLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            sleepStatusLabel.bottomAnchor.constraint(equalTo: view.centerYAnchor),
+        ])
+        
+        changeStatusButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            changeStatusButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            changeStatusButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            changeStatusButton.widthAnchor.constraint(equalToConstant: Size.width),
+            changeStatusButton.heightAnchor.constraint(equalToConstant: Size.height),
+        ])
+        
+        snoringLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            snoringLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            snoringLabel.topAnchor.constraint(equalTo: sleepStatusLabel.bottomAnchor, constant: Size.padding),
+        ])
+    }
+    
+    private func configureUI() {
+        view.backgroundColor = .black
+    }
+    
+    private func configureMLModel() {
+        snoringClassifier = try? SnoreClassification()
+    }
+}
+
+// MARK: - other functions
+extension MainViewController {
+    
+    // UI functions
     func changeLabel(from label: UILabel, to text: String) {
         let duration = 1.5
         UIView.transition(with: label, duration: duration, options: .transitionCrossDissolve) {
@@ -75,7 +132,8 @@ final class MainViewController: UIViewController {
         }
     }
     
-    func analyzeStreamInputs() {
+    // Analysis functions
+    func startStreamAnalysis() {
         inputFormat = audioEngine.inputNode.inputFormat(forBus: inputBus)
         
         do {
@@ -99,39 +157,7 @@ final class MainViewController: UIViewController {
         }
     }
     
-    func stopAnalysis() {
+    func stopStreamAnalysis() {
         audioEngine.stop()
-    }
-    
-    
-    // MARK: - configures
-    private func configureAddSubViews() {
-        view.backgroundColor = .systemBackground
-        view.addSubViews(areYouReadyLabel,
-                         areYouReadyButton)
-    }
-    
-    private func configureConstraints() {
-        areYouReadyLabel.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            areYouReadyLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            areYouReadyLabel.bottomAnchor.constraint(equalTo: view.centerYAnchor),
-        ])
-        
-        areYouReadyButton.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            areYouReadyButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            areYouReadyButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            areYouReadyButton.widthAnchor.constraint(equalToConstant: Size.width),
-            areYouReadyButton.heightAnchor.constraint(equalToConstant: Size.height)
-        ])
-    }
-    
-    private func configureUI() {
-        view.backgroundColor = .black
-    }
-    
-    private func configureMLModel() {
-        snoringClassifier = try? SnoreClassification()
     }
 }
