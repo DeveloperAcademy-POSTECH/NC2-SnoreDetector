@@ -10,6 +10,8 @@
 		3E08B74228BE4D9500F1AD99 /* SoundResultsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E08B74128BE4D9500F1AD99 /* SoundResultsObserver.swift */; };
 		3E08B74628BE601F00F1AD99 /* SnoreClassification.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3E08B74528BE601F00F1AD99 /* SnoreClassification.mlmodel */; };
 		3E08B74828BF3A5D00F1AD99 /* FeedbackPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E08B74728BF3A5D00F1AD99 /* FeedbackPopUpView.swift */; };
+		3E308E8C28BF577100C89D5F /* SnoreRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E308E8B28BF577100C89D5F /* SnoreRecorder.swift */; };
+		3E308E8E28BF961700C89D5F /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E308E8D28BF961700C89D5F /* Date+Extension.swift */; };
 		3ED04B9A28BE3F07000B4B4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED04B9928BE3F07000B4B4C /* AppDelegate.swift */; };
 		3ED04B9C28BE3F07000B4B4C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED04B9B28BE3F07000B4B4C /* SceneDelegate.swift */; };
 		3ED04BA328BE3F08000B4B4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3ED04BA228BE3F08000B4B4C /* Assets.xcassets */; };
@@ -24,6 +26,8 @@
 		3E08B74128BE4D9500F1AD99 /* SoundResultsObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundResultsObserver.swift; sourceTree = "<group>"; };
 		3E08B74528BE601F00F1AD99 /* SnoreClassification.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SnoreClassification.mlmodel; sourceTree = "<group>"; };
 		3E08B74728BF3A5D00F1AD99 /* FeedbackPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackPopUpView.swift; sourceTree = "<group>"; };
+		3E308E8B28BF577100C89D5F /* SnoreRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnoreRecorder.swift; sourceTree = "<group>"; };
+		3E308E8D28BF961700C89D5F /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		3ED04B9628BE3F07000B4B4C /* SnoreClassifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnoreClassifier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3ED04B9928BE3F07000B4B4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3ED04B9B28BE3F07000B4B4C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +119,7 @@
 			children = (
 				3ED04BB228BE3F5B000B4B4C /* UIView+Extension.swift */,
 				3ED04BB428BE3F72000B4B4C /* Color+Extension.swift */,
+				3E308E8D28BF961700C89D5F /* Date+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -134,6 +139,7 @@
 				3E08B74528BE601F00F1AD99 /* SnoreClassification.mlmodel */,
 				3ED04BBB28BE4012000B4B4C /* Record.swift */,
 				3E08B74128BE4D9500F1AD99 /* SoundResultsObserver.swift */,
+				3E308E8B28BF577100C89D5F /* SnoreRecorder.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -162,6 +168,8 @@
 			dependencies = (
 			);
 			name = SnoreClassifier;
+			packageProductDependencies = (
+			);
 			productName = SnoreClassifier;
 			productReference = 3ED04B9628BE3F07000B4B4C /* SnoreClassifier.app */;
 			productType = "com.apple.product-type.application";
@@ -190,6 +198,8 @@
 				Base,
 			);
 			mainGroup = 3ED04B8D28BE3F07000B4B4C;
+			packageReferences = (
+			);
 			productRefGroup = 3ED04B9728BE3F07000B4B4C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -217,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E08B74228BE4D9500F1AD99 /* SoundResultsObserver.swift in Sources */,
+				3E308E8E28BF961700C89D5F /* Date+Extension.swift in Sources */,
 				3ED04BB528BE3F72000B4B4C /* Color+Extension.swift in Sources */,
 				3ED04B9A28BE3F07000B4B4C /* AppDelegate.swift in Sources */,
 				3E08B74828BF3A5D00F1AD99 /* FeedbackPopUpView.swift in Sources */,
@@ -225,6 +236,7 @@
 				3ED04BB328BE3F5B000B4B4C /* UIView+Extension.swift in Sources */,
 				3E08B74628BE601F00F1AD99 /* SnoreClassification.mlmodel in Sources */,
 				3ED04B9C28BE3F07000B4B4C /* SceneDelegate.swift in Sources */,
+				3E308E8C28BF577100C89D5F /* SnoreRecorder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
