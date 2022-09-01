@@ -15,7 +15,7 @@ class SnoreRecorder: NSObject, AVAudioPlayerDelegate {
     private var savedPath: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
     static var snoreRecorder = SnoreRecorder()
     lazy var fileURL: URL = savedPath.appendingPathComponent(fileName)
-    var fileName: String = "\(Date.now.toString(dateFormat: "dd-MM-YY 'at HH:mm:ss")).m4a"
+    var fileName: String = "\(Date.now.toString(dateFormat: "dd-MM-YY 'at' HH:mm:ss")).m4a"
     
     // MARK: - initialize
     override init() {
@@ -24,7 +24,6 @@ class SnoreRecorder: NSObject, AVAudioPlayerDelegate {
     
     
     // MARK: - before recording
-    
     func startRecording() {
         let recordingSession = AVAudioSession.sharedInstance()
         let settings = [
@@ -46,7 +45,10 @@ class SnoreRecorder: NSObject, AVAudioPlayerDelegate {
             audioRecorder = try AVAudioRecorder(url: fileURL, settings: settings)
             audioRecorder.prepareToRecord()
             audioRecorder.record()
-            print("start recording")
+            print("recording started")
+            DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+                self.stopRecording()
+            }
         } catch {
             print("failed to setup the recording")
             fatalError()
@@ -57,7 +59,7 @@ class SnoreRecorder: NSObject, AVAudioPlayerDelegate {
     // MARK: - after recording
     func stopRecording() {
         audioRecorder.stop()
-        print("stop recording")
+        print("recording stopped")
         do {
             try print(Data(contentsOf: fileURL).description)
         } catch {
@@ -70,7 +72,6 @@ class SnoreRecorder: NSObject, AVAudioPlayerDelegate {
         
         do {
             try playSession.overrideOutputAudioPort(.speaker)
-            print("start playing")
         } catch {
             print("Playing failed in device")
             print(error.localizedDescription)
@@ -81,18 +82,20 @@ class SnoreRecorder: NSObject, AVAudioPlayerDelegate {
             audioPlayer.delegate = self
             audioPlayer.prepareToPlay()
             audioPlayer.play()
+            print("start playing")
         } catch {
             print("Playing failed: \(error.localizedDescription)")
         }
     }
     
-    func stopPlaying() {
-        audioPlayer.stop()
+    func pausePlaying() {
+        audioPlayer.pause()
     }
     
     func deleteRecording() {
         do {
             try FileManager.default.removeItem(at: fileURL)
+            print("recording: \(fileName) deleted")
         } catch {
             print("Recording cannot be deleted")
         }

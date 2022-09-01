@@ -8,12 +8,17 @@
 import Foundation
 import SoundAnalysis
 
+protocol IsRecordedObserverDelegate: AnyObject {
+    func showYouSnoredLabel()
+}
+
 class SoundResultsObserver: NSObject, SNResultsObserving {
+    
+    weak var delegate: IsRecordedObserverDelegate?
     
     var snoreRecorder = SnoreRecorder.snoreRecorder
     var audioSession: AVAudioSession?
     var isRecordingInitial: Bool = true
-    var confidence: String = ""
     
     func request(_ request: SNRequest, didProduce result: SNResult) {
         guard let result = result as? SNClassificationResult else { return }
@@ -22,22 +27,16 @@ class SoundResultsObserver: NSObject, SNResultsObserving {
         
         // classification confidence
         let snoringConfidence = snoringClassification.confidence * 100
-        if snoringConfidence >= 80 {
-            let snoringPercentString = String(format: "%.2f%%", snoringConfidence)
-            confidence = snoringPercentString
-            print("Snoring analysis result confidence: \(confidence)")
-            
+        if snoringConfidence >= 90 {
             // time of the capture inside the stream
-            let snoredTimeInSeconds = result.timeRange.start.seconds
-            let formattedTime = String(format: "%.2f", snoredTimeInSeconds)
-            print("Analysis result for audio at time: \(formattedTime)")
-            
+            // let snoredTimeInSeconds = result.timeRange.start.seconds
+            // let formattedTime = String(format: "%.2f", snoredTimeInSeconds)
+            // print("Analysis result for audio at time: \(formattedTime)")
             if isRecordingInitial {
                 recordWhenSnore()
                 isRecordingInitial = false
-                print("after recording: \(SnoreRecorder.snoreRecorder.fileURL)")
             }
-            print(isRecordingInitial)
+            delegate?.showYouSnoredLabel()
         }
     }
     
@@ -55,16 +54,13 @@ class SoundResultsObserver: NSObject, SNResultsObserving {
 extension SoundResultsObserver {
     func recordWhenSnore() {
         snoreRecorder.startRecording()
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-//            self.snoreRecorder.stopRecording()
-//        }
     }
     
     func playRecordedSnore() {
-        print("before playing: \(SnoreRecorder.snoreRecorder.fileURL)")
-//        snoreRecorder.fileURL != URL(string: "")! {
-//            snoreRecorder.startPlaying()
-//        }
         snoreRecorder.startPlaying()
+    }
+    
+    func pauseRecordedSnore() {
+        snoreRecorder.pausePlaying()
     }
 }
