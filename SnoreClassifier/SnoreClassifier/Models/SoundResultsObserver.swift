@@ -10,6 +10,9 @@ import SoundAnalysis
 
 class SoundResultsObserver: NSObject, SNResultsObserving {
     
+    var snoreRecorder = SnoreRecorder.snoreRecorder
+    var audioSession: AVAudioSession?
+    var isRecordingInitial: Bool = true
     var confidence: String = ""
     
     func request(_ request: SNRequest, didProduce result: SNResult) {
@@ -28,6 +31,13 @@ class SoundResultsObserver: NSObject, SNResultsObserving {
             let snoredTimeInSeconds = result.timeRange.start.seconds
             let formattedTime = String(format: "%.2f", snoredTimeInSeconds)
             print("Analysis result for audio at time: \(formattedTime)")
+            
+            if isRecordingInitial {
+                recordWhenSnore()
+                isRecordingInitial = false
+                print("after recording: \(SnoreRecorder.snoreRecorder.fileURL)")
+            }
+            print(isRecordingInitial)
         }
     }
     
@@ -39,4 +49,22 @@ class SoundResultsObserver: NSObject, SNResultsObserving {
         print("Request completed!")
     }
     
+}
+
+// MARK: - recording and playing
+extension SoundResultsObserver {
+    func recordWhenSnore() {
+        snoreRecorder.startRecording()
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+//            self.snoreRecorder.stopRecording()
+//        }
+    }
+    
+    func playRecordedSnore() {
+        print("before playing: \(SnoreRecorder.snoreRecorder.fileURL)")
+//        snoreRecorder.fileURL != URL(string: "")! {
+//            snoreRecorder.startPlaying()
+//        }
+        snoreRecorder.startPlaying()
+    }
 }

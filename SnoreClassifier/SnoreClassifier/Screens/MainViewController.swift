@@ -40,6 +40,10 @@ final class MainViewController: UIViewController {
         label.textColor = .white
         return label
     }()
+    private let feedbackView: FeedbackPopUpView = {
+        let view = FeedbackPopUpView()
+        return view
+    }()
     private lazy var snoringLabel: UILabel = {
         let label = UILabel()
         label.text = ""
@@ -54,6 +58,33 @@ final class MainViewController: UIViewController {
         button.backgroundColor = UIColor(Color.buttonColor)
         button.layer.cornerRadius = Size.cornerRadius
         button.addTarget(self, action: #selector(startObserving), for: .touchUpInside)
+        return button
+    }()
+    private lazy var playSnoreButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("내 코골이 들어보기", for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: CGFloat(16))
+        button.backgroundColor = UIColor(Color.buttonColor)
+        button.layer.cornerRadius = Size.cornerRadius
+        button.addTarget(self, action: #selector(playRecordedSnore), for: .touchUpInside)
+        return button
+    }()
+    private lazy var stopRecordingButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("녹음 그만", for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: CGFloat(16))
+        button.backgroundColor = UIColor(Color.buttonColor)
+        button.layer.cornerRadius = Size.cornerRadius
+        button.addTarget(self, action: #selector(stopRecordingSnore), for: .touchUpInside)
+        return button
+    }()
+    private lazy var deleteRecordingButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("녹음 삭제", for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: CGFloat(16))
+        button.backgroundColor = UIColor(Color.buttonColor)
+        button.layer.cornerRadius = Size.cornerRadius
+        button.addTarget(self, action: #selector(deleteRecordedSnore), for: .touchUpInside)
         return button
     }()
     
@@ -73,21 +104,39 @@ final class MainViewController: UIViewController {
         if isObserving {
             stopStreamAnalysis()
             changeLabel(from: sleepStatusLabel, to: "잘 준비가 되셨나요🤔")
-            changeLabel(from: snoringLabel, to: "")
+            changeButtonLabel(from: changeStatusButton, to: "나..코고나😬")
         } else {
             startStreamAnalysis()
             changeLabel(from: sleepStatusLabel, to: "잘자요😴")
+            changeButtonLabel(from: changeStatusButton, to: "하암..잘잤다🥱")
         }
         isObserving.toggle()
     }
     
+    @objc func playRecordedSnore() {
+        resultsObserver.playRecordedSnore()
+        print("button clicked")
+    }
+    
+    @objc func stopRecordingSnore() {
+        resultsObserver.snoreRecorder.stopRecording()
+        print("recording stopped")
+    }
+    
+    @objc func deleteRecordedSnore() {
+        resultsObserver.snoreRecorder.deleteRecording()
+        print("recording: \(resultsObserver.snoreRecorder.fileName) deleted")
+    }
  
     // MARK: - configures
     private func configureAddSubViews() {
         view.backgroundColor = .systemBackground
         view.addSubViews(sleepStatusLabel,
                          changeStatusButton,
-                         snoringLabel)
+                         snoringLabel,
+                         playSnoreButton,
+                         stopRecordingButton,
+                         deleteRecordingButton)
     }
     
     private func configureConstraints() {
@@ -110,6 +159,27 @@ final class MainViewController: UIViewController {
             snoringLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             snoringLabel.topAnchor.constraint(equalTo: sleepStatusLabel.bottomAnchor, constant: Size.padding),
         ])
+        
+        playSnoreButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            playSnoreButton.bottomAnchor.constraint(equalTo: changeStatusButton.topAnchor, constant: -Size.padding),
+            playSnoreButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            playSnoreButton.widthAnchor.constraint(equalToConstant: 140)
+        ])
+        
+        stopRecordingButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            stopRecordingButton.bottomAnchor.constraint(equalTo: changeStatusButton.topAnchor, constant: -Size.padding),
+            stopRecordingButton.leftAnchor.constraint(equalTo: playSnoreButton.rightAnchor, constant: Size.padding/2),
+            stopRecordingButton.rightAnchor.constraint(equalTo: changeStatusButton.rightAnchor),
+        ])
+        
+        deleteRecordingButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            deleteRecordingButton.bottomAnchor.constraint(equalTo: changeStatusButton.topAnchor, constant: -Size.padding),
+            deleteRecordingButton.rightAnchor.constraint(equalTo: playSnoreButton.leftAnchor, constant: -Size.padding/2),
+            deleteRecordingButton.leftAnchor.constraint(equalTo: changeStatusButton.leftAnchor),
+        ])
     }
     
     private func configureUI() {
@@ -126,9 +196,16 @@ extension MainViewController {
     
     // UI functions
     func changeLabel(from label: UILabel, to text: String) {
-        let duration = 1.5
+        let duration = 1.0
         UIView.transition(with: label, duration: duration, options: .transitionCrossDissolve) {
             label.text = text
+        }
+    }
+    
+    func changeButtonLabel(from button: UIButton, to text: String) {
+        let duration = 1.0
+        UIView.transition(with: button, duration: duration, options: .transitionCrossDissolve) {
+            button.setTitle(text, for: .normal)
         }
     }
     
