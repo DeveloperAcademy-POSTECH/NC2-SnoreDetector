@@ -1,8 +1,8 @@
 # NC2-SnoreDetector
 
 <p float="left">
-  <img src="https://user-images.githubusercontent.com/72431640/190069311-ac6109f2-4545-4009-8a56-a97a4afd6ff7.PNG" width="100" />
-  <img src="https://user-images.githubusercontent.com/72431640/190069319-91065a2f-a6c6-460c-8738-d401c0ca80dd.PNG" width="100" /> 
+  <img src="https://user-images.githubusercontent.com/72431640/190069311-ac6109f2-4545-4009-8a56-a97a4afd6ff7.PNG" width="300" />
+  <img src="https://user-images.githubusercontent.com/72431640/190069319-91065a2f-a6c6-460c-8738-d401c0ca80dd.PNG" width="300" /> 
 </p>
 
 ## Project Introduction
