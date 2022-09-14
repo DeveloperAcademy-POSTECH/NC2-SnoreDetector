@@ -1,12 +1,7 @@
 # NC2-SnoreDetector
 
-<p align="center">
-  <br>
-  | :-----------: | :------------: |
-  |   ![image1]   |    ![image2]   |
-  <br>
-</p>
-
+| :-----------: | :------------: |
+|   ![image1]   |    ![image2]   |
 
 ## Project Introduction
 
