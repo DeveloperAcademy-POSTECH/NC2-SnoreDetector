@@ -2,8 +2,8 @@
 
 <p align="center">
   <br>
-  | :-----------: | :--------------: |
-  ![](https://user-images.githubusercontent.com/72431640/190069311-ac6109f2-4545-4009-8a56-a97a4afd6ff7.PNG) | ![](https://user-images.githubusercontent.com/72431640/190069319-91065a2f-a6c6-460c-8738-d401c0ca80dd.PNG)
+  | :-----------: | :------------: |
+  |   ![image1]   |    ![image2]   |
   <br>
 </p>
 
@@ -49,6 +49,8 @@ so when you wake up, you can actually hear your snoring!
 
 <!-- Stack Icon Refernces -->
 
+[image1]: https://user-images.githubusercontent.com/72431640/190069311-ac6109f2-4545-4009-8a56-a97a4afd6ff7.PNG
+[image2]: https://user-images.githubusercontent.com/72431640/190069319-91065a2f-a6c6-460c-8738-d401c0ca80dd.PNG
 [swift]: https://user-images.githubusercontent.com/72431640/190073481-7e519465-2996-4434-9d4a-bb8fb1c95ff8.png
 [createml]: https://user-images.githubusercontent.com/72431640/190073945-2db95c52-32bf-472b-ad58-b261a288f477.png
 
