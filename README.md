@@ -41,13 +41,11 @@ so when you wake up, you can actually hear your snoring!
 ## 배운 점 & 아쉬운 점
 
 <p align="justify">
-- There were lot more things I was planning on developing, but it was too short to actually work on it
+- There were lot more things I was planning on developing, but it was too short to actually work on it <br>
 - I wanted to learn how createML works, but there weren't documentations about the algorithm
 </p>
 
 <br>
-
-## 라이센스
 
 <!-- Stack Icon Refernces -->
 
