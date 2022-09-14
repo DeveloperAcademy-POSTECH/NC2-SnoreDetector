@@ -2,8 +2,8 @@
 
 <p align="center">
   <br>
-  <img src="https://user-images.githubusercontent.com/72431640/190069311-ac6109f2-4545-4009-8a56-a97a4afd6ff7.PNG" width="50%">
-  <img src="https://user-images.githubusercontent.com/72431640/190069319-91065a2f-a6c6-460c-8738-d401c0ca80dd.PNG" width="50%">
+                                                                                                                                |
+  <img src="https://user-images.githubusercontent.com/72431640/190069311-ac6109f2-4545-4009-8a56-a97a4afd6ff7.PNG" width="50%">:|:<img src="https://user-images.githubusercontent.com/72431640/190069319-91065a2f-a6c6-460c-8738-d401c0ca80dd.PNG" width="50%">
   <br>
 </p>
 
@@ -11,8 +11,8 @@
 ## Project Introduction
 
 <p align="justify">
-Have you ever wondered whether or not you snore?
-Snore Detector detects your snoring when you sleep and it records it automatically,
+Have you ever wondered whether or not you snore? <br>
+Snore Detector detects your snoring when you sleep and it records it automatically, <br>
 so when you wake up, you can actually hear your snoring!
 </p>
 
